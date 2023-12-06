@@ -26,6 +26,7 @@ export default function Home() {
           <nav className="flex items-center">
             {!authenticatedUser && (
               <>
+              
                 <Link href="/api/auth/login" className="mr-4 hover:text-gray-300">Login</Link>
                 <Link href="/api/auth/signup" className="hover:text-gray-300">Signup</Link>
               </>
@@ -57,9 +58,10 @@ export const getServerSideProps = async (ctx) => {
         destination: "/chat",
       },
     };
+  }else {
+    // If the user is not authenticated, render the home page
+    return {
+      props: {},
+    };
   }
-
-  return {
-    props: {},
-  };
 };

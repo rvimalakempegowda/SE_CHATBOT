@@ -9,7 +9,7 @@ import { getSession } from "@auth0/nextjs-auth0";
 import clientPromise from "lib/mongodb";
 import { ObjectId } from "mongodb";
 
-export default function ChatPage({ initialChatId, initialTitle, initialMessages = [] }) {
+export default function ChatPage({ initialChatId,initialMessages = [] }) {
   const [newChatId, setNewChatId] = useState(null);
   const [incomingMessage, setIncomingMessage] = useState("");
   const [messageText, setMessageText] = useState("");
